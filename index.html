@@ -1,1 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenwood High School</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="School Logo" height="50">
+                Greenwood High
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.html">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section with Promo Video -->
+    <header class="hero-section">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-6 hero-content d-flex align-items-center">
+                    <div class="px-4 py-5 text-white">
+                        <h1 class="display-4 fw-bold">Excellence in Education</h1>
+                        <p class="lead mb-4">Greenwood High School provides a nurturing environment where students grow academically, socially, and emotionally.</p>
+                        <div class="d-grid gap-2 d-sm-flex">
+                            <button class="btn btn-light btn-lg px-4 gap-3">Enroll Now</button>
+                            <button class="btn btn-outline-light btn-lg px-4">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <video autoplay muted loop id="heroVideo">
+                            <source src="videos/school-promo.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <button id="videoBtn" class="btn btn-success video-control">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Links -->
+    <section class="quick-links py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <a href="calendar.html" class="quick-link-item text-center">
+                        <div class="icon-box bg-primary text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <h5>School Calendar</h5>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="academics.html" class="quick-link-item text-center">
+                        <div class="icon-box bg-info text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-book fa-2x"></i>
+                        </div>
+                        <h5>Student Resources</h5>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="achievements.html" class="quick-link-item text-center">
+                        <div class="icon-box bg-warning text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-trophy fa-2x"></i>
+                        </div>
+                        <h5>Achievements</h5>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="contact.html" class="quick-link-item text-center">
+                        <div class="icon-box bg-danger text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </div>
+                        <h5>Contact Us</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/school-building.jpg" alt="School Building" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">About Our School</h2>
+                    <p>Founded in 1985, Greenwood High School has been a cornerstone of educational excellence in our community. Our mission is to foster intellectual growth, creativity, and character development in a supportive and challenging environment.</p>
+                    <p>With a student-teacher ratio of 12:1, we ensure personalized attention for every student. Our curriculum is designed to prepare students for the challenges of higher education and beyond.</p>
+                    <a href="about.html" class="btn btn-success mt-3">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">What Parents Say</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card card h-100">
+                        <div class="card-body">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-success"></i>
+                            </div>
+                            <p class="testimonial-text">Greenwood High has provided my child with an exceptional education and countless opportunities to grow. The teachers are dedicated and truly care about each student's success.</p>
+                            <div class="testimonial-author d-flex align-items-center mt-4">
+                                <img src="images/parent1.jpg" alt="Parent" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Sarah Johnson</h5>
+                                    <p class="text-muted mb-0">Parent of 10th Grader</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card card h-100">
+                        <div class="card-body">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-success"></i>
+                            </div>
+                            <p class="testimonial-text">The STEM program at Greenwood is outstanding. My daughter has developed a passion for robotics and coding that I never expected. The resources and mentorship are top-notch.</p>
+                            <div class="testimonial-author d-flex align-items-center mt-4">
+                                <img src="images/parent2.jpg" alt="Parent" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Michael Chen</h5>
+                                    <p class="text-muted mb-0">Parent of 8th Grader</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card card h-100">
+                        <div class="card-body">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-success"></i>
+                            </div>
+                            <p class="testimonial-text">As a parent of a special needs child, I can't express how grateful I am for the inclusive environment at Greenwood. The support staff is amazing and my son is thriving socially and academically.</p>
+                            <div class="testimonial-author d-flex align-items-center mt-4">
+                                <img src="images/parent3.jpg" alt="Parent" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Lisa Rodriguez</h5>
+                                    <p class="text-muted mb-0">Parent of 6th Grader</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Work Gallery -->
+    <section class="student-work py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Student Work Gallery</h2>
+            <div class="row g-3">
+                <div class="col-md-4 col-6">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="images/art1.jpg" data-title="Oil Painting by Emily (Grade 11)" data-desc="This painting won first place in the state art competition.">
+                        <img src="images/art1-thumb.jpg" alt="Student Art" class="img-fluid rounded gallery-thumb">
+                    </a>
+                </div>
+                <div class="col-md-4 col-6">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="images/science-fair.jpg" data-title="Science Fair Project by Jason (Grade 9)" data-desc="Renewable energy model that earned a scholarship to summer science camp.">
+                        <img src="images/science-fair-thumb.jpg" alt="Science Project" class="img-fluid rounded gallery-thumb">
+                    </a>
+                </div>
+                <div class="col-md-4 col-6">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="images/robotics.jpg" data-title="Robotics Team Competition" data-desc="Our robotics team placed 3rd in the regional championships.">
+                        <img src="images/robotics-thumb.jpg" alt="Robotics Team" class="img-fluid rounded gallery-thumb">
+                    </a>
+                </div>
+                <div class="col-md-4 col-6">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="images/literary-magazine.jpg" data-title="Literary Magazine Cover" data-desc="Student-designed cover for the school's award-winning literary magazine.">
+                        <img src="images/literary-magazine-thumb.jpg" alt="Literary Magazine" class="img-fluid rounded gallery-thumb">
+                    </a>
+                </div>
+                <div class="col-md-4 col-6">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="images/drama.jpg" data-title="Spring Musical Performance" data-desc="Scene from our production of 'The Little Mermaid' which sold out all shows.">
+                        <img src="images/drama-thumb.jpg" alt="Drama Performance" class="img-fluid rounded gallery-thumb">
+                    </a>
+                </div>
+                <div class="col-md-4 col-6">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="images/sports.jpg" data-title="State Championship Basketball Team" data-desc="Our girls' basketball team won the state title for the second year in a row.">
+                        <img src="images/sports-thumb.jpg" alt="Sports Team" class="img-fluid rounded gallery-thumb">
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="achievements.html" class="btn btn-outline-success">View More Achievements</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="galleryModalTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" id="galleryModalImage" class="img-fluid mb-3" alt="">
+                    <p id="galleryModalDesc"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <section class="events py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Upcoming Events</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card event-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4 event-date d-flex align-items-center justify-content-center">
+                                <div class="text-center p-3">
+                                    <div class="event-day">15</div>
+                                    <div class="event-month">OCT</div>
+                                    <div class="event-year">2023</div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Parent-Teacher Conferences</h5>
+                                    <p class="card-text">Meet with your child's teachers to discuss academic progress and goals.</p>
+                                    <p class="card-text"><small class="text-muted">8:00 AM - 6:00 PM | School Auditorium</small></p>
+                                    <a href="#" class="btn btn-sm btn-success">RSVP</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card event-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4 event-date d-flex align-items-center justify-content-center">
+                                <div class="text-center p-3">
+                                    <div class="event-day">22</div>
+                                    <div class="event-month">OCT</div>
+                                    <div class="event-year">2023</div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">STEM Fair</h5>
+                                    <p class="card-text">Annual science fair showcasing student projects in science, technology, engineering, and math.</p>
+                                    <p class="card-text"><small class="text-muted">10:00 AM - 3:00 PM | Science Wing</small></p>
+                                    <a href="#" class="btn btn-sm btn-success">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card event-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4 event-date d-flex align-items-center justify-content-center">
+                                <div class="text-center p-3">
+                                    <div class="event-day">05</div>
+                                    <div class="event-month">NOV</div>
+                                    <div class="event-year">2023</div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">College Prep Workshop</h5>
+                                    <p class="card-text">Guidance for juniors and seniors on college applications, essays, and interviews.</p>
+                                    <p class="card-text"><small class="text-muted">6:00 PM - 8:00 PM | Library</small></p>
+                                    <a href="#" class="btn btn-sm btn-success">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card event-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4 event-date d-flex align-items-center justify-content-center">
+                                <div class="text-center p-3">
+                                    <div class="event-day">17</div>
+                                    <div class="event-month">NOV</div>
+                                    <div class="event-year">2023</div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Fall Music Concert</h5>
+                                    <p class="card-text">Performances by the school orchestra, band, and choir.</p>
+                                    <p class="card-text"><small class="text-muted">7:00 PM - 9:00 PM | Performing Arts Center</small></p>
+                                    <a href="#" class="btn btn-sm btn-success">Get Tickets</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="calendar.html" class="btn btn-success">View Full Calendar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter py-5 bg-success text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Stay Connected</h2>
+                    <p class="mb-4">Subscribe to our newsletter to receive updates on school events, important dates, and student achievements.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email address" required>
+                            <button class="btn btn-light" type="submit">Subscribe</button>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="consentCheck" required>
+                            <label class="form-check-label" for="consentCheck">
+                                I agree to receive emails from Greenwood High School
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Greenwood High School</h5>
+                    <p>123 Education Lane<br>Learning City, LC 12345<br>Phone: (123) 456-7890<br>Email: info@greenwoodhigh.edu</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="academics.html" class="text-white">Academics</a></li>
+                        <li><a href="achievements.html" class="text-white">Achievements</a></li>
+                        <li><a href="calendar.html" class="text-white">Calendar</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>School Hours</h5>
+                    <ul class="list-unstyled">
+                        <li>Monday - Friday: 8:00 AM - 3:30 PM</li>
+                        <li>Office Hours: 7:30 AM - 4:30 PM</li>
+                        <li>Weekends: Closed</li>
+                    </ul>
+                    <h5 class="mt-4">Emergency Contacts</h5>
+                    <ul class="list-unstyled">
+                        <li>Nurse: ext. 123</li>
+                        <li>Security: ext. 456</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Map</h5>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256751766!2d-73.98784492416414!3d40.7484409713895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689878901234!5m2!1sen!2sus" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-0 mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Greenwood High School. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white me-3">Terms of Use</a>
+                    <a href="#" class="text-white">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
