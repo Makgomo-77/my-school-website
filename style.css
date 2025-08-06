@@ -1,1 +1,480 @@
 
+/* General Styles */
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #218838;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --purple: #6f42c1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    background: linear-gradient(135deg, var(--primary-color), #1e7e34);
+    min-height: 500px;
+}
+
+.video-container {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+
+#heroVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-control {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+/* Quick Links */
+.quick-link-item {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.quick-link-item:hover {
+    transform: translateY(-5px);
+    color: var(--primary-color);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.quick-link-item:hover .icon-box {
+    background: var(--primary-color) !important;
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* Testimonials */
+.testimonial-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.quote-icon {
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author img {
+    border: 3px solid var(--primary-color);
+}
+
+/* Gallery */
+.gallery-thumb {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-thumb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Events */
+.event-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.event-date {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.event-day {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-month {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.event-year {
+    font-size: 1rem;
+}
+
+/* Newsletter */
+.newsletter-form .form-control {
+    height: 50px;
+    border: none;
+}
+
+.newsletter-form .btn {
+    height: 50px;
+    padding: 0 25px;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color);
+}
+
+.footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Achievement Badge */
+.achievement-badge {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-right: 15px;
+}
+
+.badge-text {
+    line-height: 1.2;
+}
+
+.badge-count {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.badge-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Calendar Page */
+.filters-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.upcoming-events-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.upcoming-event-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.upcoming-event-item:last-child {
+    border-bottom: none;
+}
+
+.event-date-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+/* Achievements Page */
+.category-card {
+    display: block;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-card.academic {
+    background: linear-gradient(135deg, #4e73df, #224abe);
+}
+
+.category-card.arts {
+    background: linear-gradient(135deg, #f6c23e, #dda20a);
+}
+
+.category-card.sports {
+    background: linear-gradient(135deg, #e74a3b, #be2617);
+}
+
+.category-card.service {
+    background: linear-gradient(135deg, #36b9cc, #258391);
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.achievement-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-meta .badge {
+    margin-right: 5px;
+}
+
+.student-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.student-list li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.student-list li:last-child {
+    border-bottom: none;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Academics Page */
+.program-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.program-features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.program-features li {
+    padding: 5px 0;
+}
+
+.resource-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.resource-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.portal-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.portal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.portal-logo {
+    max-height: 60px;
+    max-width: 100%;
+}
+
+.bg-purple {
+    background-color: var(--purple) !important;
+}
+
+.btn-outline-purple {
+    color: var(--purple);
+    border-color: var(--purple);
+}
+
+.btn-outline-purple:hover {
+    color: white;
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .hero-content {
+        min-height: auto;
+        padding: 60px 0;
+    }
+    
+    .video-container {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-title:after {
+        width: 60px;
+    }
+    
+    .icon-box {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .quick-link-item h5 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-content {
+        padding: 40px 0;
+    }
+    
+    .video-container {
+        min-height: 300px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
