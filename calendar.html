@@ -1,1 +1,235 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Calendar | Greenwood High School</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="School Logo" height="50">
+                Greenwood High
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calendar.html">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-3">School Calendar</h1>
+                    <p class="lead mb-0">Stay updated with all important dates, events, and holidays at Greenwood High.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <div class="btn-group" role="group">
+                        <button id="export-ical" class="btn btn-outline-success">
+                            <i class="fas fa-calendar-plus me-2"></i>Export to iCal
+                        </button>
+                        <button id="print-calendar" class="btn btn-outline-success">
+                            <i class="fas fa-print me-2"></i>Print Calendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="card filters-card">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Calendar Filters</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6 class="mb-3">Event Types</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="academic-events" checked>
+                                    <label class="form-check-label" for="academic-events">
+                                        Academic Events
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sports-events" checked>
+                                    <label class="form-check-label" for="sports-events">
+                                        Sports Events
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="arts-events" checked>
+                                    <label class="form-check-label" for="arts-events">
+                                        Arts Events
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="parent-events" checked>
+                                    <label class="form-check-label" for="parent-events">
+                                        Parent Events
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="holidays" checked>
+                                    <label class="form-check-label" for="holidays">
+                                        Holidays
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="mb-3">Grade Levels</h6>
+                                <select class="form-select" id="grade-level-filter">
+                                    <option value="all" selected>All Grades</option>
+                                    <option value="elementary">Elementary (K-5)</option>
+                                    <option value="middle">Middle School (6-8)</option>
+                                    <option value="high">High School (9-12)</option>
+                                </select>
+                            </div>
+                            <button id="reset-filters" class="btn btn-outline-success w-100">Reset Filters</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4 upcoming-events-card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Upcoming Events</h5>
+                        </div>
+                        <div class="card-body" id="upcoming-events-list">
+                            <!-- Events will be populated by JavaScript -->
+                            <div class="d-flex justify-content-center">
+                                <div class="spinner-border text-success" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Year Key Dates -->
+    <section class="key-dates py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Academic Year Key Dates</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Fall Semester</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>First Day:</strong> Aug 28, 2023</li>
+                                <li class="mb-2"><strong>Labor Day:</strong> Sep 4, 2023</li>
+                                <li class="mb-2"><strong>Parent Conferences:</strong> Oct 15, 2023</li>
+                                <li class="mb-2"><strong>Thanksgiving Break:</strong> Nov 22-24, 2023</li>
+                                <li><strong>Last Day:</strong> Dec 15, 2023</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Winter Break</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Winter Break:</strong> Dec 18, 2023 - Jan 5, 2024</li>
+                                <li class="mb-2"><strong>Teacher Work Day:</strong> Jan 8, 2024</li>
+                                <li><strong>Students Return:</strong> Jan 9, 2024</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Spring Semester</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>MLK Day:</strong> Jan 15, 2024</li>
+                                <li class="mb-2"><strong>Mid-Winter Break:</strong> Feb 19-23, 2024</li>
+                                <li class="mb-2"><strong>Spring Break:</strong> Apr 1-5, 2024</li>
+                                <li><strong>Memorial Day:</strong> May 27, 2024</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Important Deadlines</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>AP Exam Registration:</strong> Nov 3, 2023</li>
+                                <li class="mb-2"><strong>College Applications:</strong> Dec 1, 2023</li>
+                                <li class="mb-2"><strong>Course Selection:</strong> Mar 15, 2024</li>
+                                <li><strong>Graduation:</strong> Jun 10, 2024</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white pt-5 pb-4">
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <!-- Calendar JS -->
+    <script src="js/calendar.js"></script>
+</body>
+</html>
